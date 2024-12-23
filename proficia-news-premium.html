@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proficia News</title>
+    <link rel="website icon" type="png"
+    href="proficia-imagenes/Proficia Símbolo.png">
+    <script>
+        // Verificar si el usuario está registrado
+        if (!sessionStorage.getItem('usuarioRegistrado')) {
+            window.location.href = 'proficia-login.html';
+        }
+
+        // Obtener el nombre de usuario para mostrarlo
+        const usuario = sessionStorage.getItem('usuarioNombre') || 'Usuario';
+        const fotoPerfil = sessionStorage.getItem('usuarioFoto') || 'https://via.placeholder.com/40';
+    </script>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            background-color: #8b0000;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 4px solid #ffcc00;
+        }
+        header img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .user-profile {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+        }
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        nav {
+            background-color: #ffcc00;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #8b0000;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #f7f7f7;
+            color: #8b0000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-article {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ffcc00;
+        }
+        .news-article:last-child {
+            border-bottom: none;
+        }
+        .news-article h2 {
+            font-size: 1.8rem;
+            color: #8b0000;
+            margin-bottom: 10px;
+        }
+        .news-article p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .news-article .date {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #8b0000;
+            color: white;
+            font-size: 0.9rem;
+            border-top: 4px solid #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="proficia-imagenes/Proficia News Premium.png" alt="Banner de Proficia News">
+        <p>Explora las últimas noticias y novedades relacionadas con Proficia</p>
+        <div class="user-profile">
+            <img id="fotoPerfil" src="https://via.placeholder.com/40" alt="Foto de perfil">
+            <span id="nombreUsuario">Usuario</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="proficia.html">Inicio</a>
+        <a href="proficia-news.html">Regresar</a>
+    </nav>
+
+    <div class="container">
+        <div class="news-article">
+            <h2>Beneficios</h2>
+            <p>Acceso a contenido premium o exclusivo, lo que incluye reportajes de investigación, entrevistas especiales o cobertura más profunda de eventos.</p>
+            <p>Recibes las noticias más recientes antes que el público en general, a través de notificaciones en tiempo real o boletines informativos.</p>
+            <p>Contenido sin anuncios.</p>
+            <p>Al estar suscrito, puedes tener acceso a reportajes más completos, análisis detallados y perspectivas diversas que no siempre se ofrecen de manera gratuita.</p>
+            <p>Podrás solicitar implementar en el periódico cualquier noticia, reportaje o chisme que desees</p>
+            <p>Muchos noticieros incluyen contenido multimedia exclusivo, como videos, podcasts, infografías interactivas, y más, que enriquecen la experiencia de lectura y comprensión.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Proficia RP. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Asignar datos del usuario al perfil
+        document.getElementById('nombreUsuario').textContent = usuario;
+        document.getElementById('fotoPerfil').src = fotoPerfil;
+    </script>
+</body>
+</html>

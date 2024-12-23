@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnionLinks</title>
+    <link rel="website icon" type="png"
+    href="proficia-imagenes/Tor.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="proficia-imagenes/onionlinks.png"/>
+    <p>Short  .onion  v2  websites  will  stop  working  in  october  2021.  Bookmark  OnionLinks  or  <span style="color:blue">DARKWEBLINKS.COM</span>  for  working  v3  .onion  sites!</p>
+    <input type="text" id="customLink" placeholder="OnionLinks">
+    <button style="color: blueviolet;" onclick="searchLink()">Search</button>
+
+    <script>
+        // Mapeo de enlaces personalizados a URLs reales
+        const linkMap = {
+            "darkweb://void.dmd.onion": "https://sites.google.com/view/departamento-mental-demoniaco-",
+        };
+
+        function searchLink() {
+            const inputLink = document.getElementById('customLink').value;
+            
+            if (linkMap[inputLink]) {
+                // Redirige a la URL real
+                window.location.href = linkMap[inputLink];
+            } else {
+                // Muestra un mensaje de error si el link no está definido
+                alert('The .onion is not exist.');
+            }
+        }
+    </script>
+</body>
+</html>

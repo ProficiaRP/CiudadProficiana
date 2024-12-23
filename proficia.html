@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Proficia</title>
+    <link rel="website icon" type="png"
+    href="proficia-imagenes/Proficia Símbolo.png">
+    <script>
+        // Verificar si el usuario está registrado
+        if (!sessionStorage.getItem('usuarioRegistrado')) {
+            window.location.href = 'proficia-login.html';
+        }
+
+        // Obtener el nombre de usuario para mostrarlo
+        const usuario = sessionStorage.getItem('usuarioNombre') || 'Usuario';
+        const fotoPerfil = sessionStorage.getItem('usuarioFoto') || 'https://via.placeholder.com/40';
+    </script>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f6f2;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #002147;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .user-profile {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+        }
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        nav {
+            background-color: #d4af37;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #002147;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #f7f6f2;
+            color: #002147;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            gap: 20px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+            border-left: 5px solid #d4af37;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #002147;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 5px;
+        }
+        .section p {
+            font-size: 1rem;
+        }
+        .section ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #002147;
+            color: white;
+            font-size: 0.9rem;
+            border-top: 4px solid #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="proficia-imagenes/Proficia.png" alt="Banner de Proficia">
+        <p>Un espacio para discutir y compartir información sobre Proficia</p>
+        <div class="user-profile">
+            <img id="fotoPerfil" src="https://via.placeholder.com/40" alt="Foto de perfil">
+            <span id="nombreUsuario">Usuario</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="proficia-news.html">Proficia News</a>
+        <a href="gobierno-proficia.html">Gobierno de Proficia</a>
+    </nav>
+
+    <div class="container">
+        <!-- Sección Proficia News -->
+        <div id="proficia-news" class="section">
+            <h2>Proficia News</h2>
+            <p>Explora las últimas noticias y novedades relacionadas con Proficia. Comparte tus ideas y discute los eventos recientes.</p>
+            <ul>
+                <li><a href="#">Noticia 1: Nuevo evento en Proficia</a></li>
+                <li><a href="#">Noticia 2: Actualizaciones importantes</a></li>
+                <li><a href="#">Noticia 3: Comunidad en crecimiento</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección Gobierno de Proficia -->
+        <div id="gobierno-proficia" class="section">
+            <h2>Gobierno de Proficia</h2>
+            <p>Debate sobre las políticas, decisiones y estructura del Gobierno de Proficia. Tu opinión cuenta.</p>
+            <ul>
+                <li><a href="#">Discusión 1: Nuevas leyes propuestas</a></li>
+                <li><a href="#">Discusión 2: Participación ciudadana</a></li>
+                <li><a href="#">Discusión 3: Transparencia gubernamental</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección Banco de Proficia -->
+        <div id="gobierno-proficia" class="section">
+            <h2>Banco de Proficia</h2>
+            <ul>
+                <li><a href="#">Discusión 1: Nuevas monedas al público</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Proficia RP. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Asignar datos del usuario al perfil
+        document.getElementById('nombreUsuario').textContent = usuario;
+        document.getElementById('fotoPerfil').src = fotoPerfil;
+    </script>
+</body>
+</html>

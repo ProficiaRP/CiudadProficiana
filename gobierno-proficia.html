@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gobierno de Proficia</title>
+    <link rel="website icon" type="png"
+    href="proficia-imagenes/Gobierno de Proficia (Blanco).png">
+    <script>
+        // Verificar si el usuario está registrado
+        if (!sessionStorage.getItem('usuarioRegistrado')) {
+            window.location.href = 'proficia-login.html';
+        }
+
+        // Obtener el nombre de usuario para mostrarlo
+        const usuario = sessionStorage.getItem('usuarioNombre') || 'Usuario';
+        const fotoPerfil = sessionStorage.getItem('usuarioFoto') || 'https://via.placeholder.com/40';
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1.8rem 0;
+            text-align: center;
+            border-bottom: 6px solid #ffc107;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.4rem;
+            font-style: italic;
+        }
+        .user-profile {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+        }
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        nav {
+            background-color: #ffc107;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            display: inline-block;
+            color: #003366;
+            text-align: center;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #003366;
+            color: #ffc107;
+        }
+        .banner {
+            background: url('https://via.placeholder.com/1920x400') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .banner h2 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid #003366;
+        }
+        .section h2 {
+            color: #003366;
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        .section p {
+            font-size: 1.1rem;
+        }
+        .section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+            font-size: 1rem;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            font-size: 1rem;
+            border-top: 6px solid #ffc107;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gobierno de Proficia</h1>
+        <p>Unidad, Progreso y Transparencia</p>
+        <div class="user-profile">
+            <img id="fotoPerfil" src="https://via.placeholder.com/40" alt="Foto de perfil">
+            <span id="nombreUsuario">Usuario</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="proficia.html">Inicio</a>
+        <a href="proficia-news.html">Proficia News</a>
+    </nav>
+    
+    <nav>
+        <a href="#estructura">Estructura</a>
+        <a href="#politicas">Políticas</a>
+        <a href="#participacion">Participación Ciudadana</a>
+    </nav>
+
+    <div class="banner">
+        <h2>Por un futuro próspero y justo</h2>
+    </div>
+
+    <div class="container">
+        <div id="estructura" class="section">
+            <h2>Estructura del Gobierno</h2>
+            <p>El Gobierno de Proficia está constituido por los siguientes poderes fundamentales, que garantizan el equilibrio y el bienestar de la nación:</p>
+            <ul>
+                <li><strong>Poder Ejecutivo:</strong> Representado por el Presidente y su gabinete de ministros, responsables de implementar las políticas públicas.</li>
+                <li><strong>Poder Legislativo:</strong> Compuesto por el Congreso Nacional, encargado de elaborar y aprobar leyes.</li>
+                <li><strong>Poder Judicial:</strong> Garantiza la justicia y la aplicación de las leyes mediante tribunales independientes.</li>
+            </ul>
+        </div>
+
+        <div id="politicas" class="section">
+            <h2>Políticas y Programas</h2>
+            <p>El Gobierno de Proficia se esfuerza por establecer iniciativas que beneficien a todos los ciudadanos. Algunas de las principales políticas incluyen:</p>
+            <ul>
+                <li><strong>Sostenibilidad:</strong> Programas enfocados en la protección del medio ambiente y el desarrollo sostenible.</li>
+                <li><strong>Educación Inclusiva:</strong> Garantizar acceso a educación de calidad para todos los ciudadanos.</li>
+                <li><strong>Seguridad Nacional:</strong> Planes estratégicos para preservar la paz y el orden público.</li>
+            </ul>
+        </div>
+
+        <div id="participacion" class="section">
+            <h2>Participación Ciudadana</h2>
+            <p>La ciudadanía juega un papel esencial en la construcción de Proficia. Se promueven espacios para el diálogo y la cooperación:</p>
+            <ul>
+                <li><strong>Foros Abiertos:</strong> Sesiones regulares para escuchar las propuestas de la comunidad.</li>
+                <li><strong>Consultas Populares:</strong> Mecanismos para conocer la opinión ciudadana sobre temas clave.</li>
+                <li><strong>Voluntariado:</strong> Iniciativas para participar activamente en proyectos gubernamentales.</li>
+            </ul>
+            <p><a href="#">Descubre cómo participar en nuestras iniciativas.</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Proficia RP. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Asignar datos del usuario al perfil
+        document.getElementById('nombreUsuario').textContent = usuario;
+        document.getElementById('fotoPerfil').src = fotoPerfil;
+    </script>
+</body>
+</html>
